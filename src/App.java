@@ -8,12 +8,14 @@ public class App {
         // int tiempoVerduras;
         // tiempoVerduras = (int)Math.floor(Math.random()*600+1);
 
-        Granjeros fulancio = new Granjeros(almacen);
+        Granjeros thanos = new Granjeros(almacen);
+        Granjeros faker = new Granjeros(almacen);
 
         System.out.println("******Hilos terminados******");
         
         try {
-            fulancio.start();
+            thanos.start();
+            faker.start();
         } catch (Exception e) {
             System.out.println("Error");
             e.printStackTrace();

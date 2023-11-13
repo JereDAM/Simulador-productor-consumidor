@@ -8,6 +8,7 @@ public class Almacen {
         if(cantidadVerduraAlmacen < LIMITE_ALMACEN){
             cantidadVerduraAlmacen++;
         }
+        notifyAll();
     }
 
     public synchronized void consumir(){
