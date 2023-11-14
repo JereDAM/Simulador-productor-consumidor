@@ -6,7 +6,7 @@ public class Consumidores extends Thread{
     
     private Almacen almacen;
     private String nombreConsumidor;
-    private static final int ESPERA = 3000;
+    private static final int ESPERA = 5000;
 
     public Consumidores(Almacen almacen, String nombreConsumidor){
         this.almacen = almacen;

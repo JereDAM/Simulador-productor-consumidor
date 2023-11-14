@@ -10,7 +10,7 @@ public class Granjeros extends Thread{
     private int indiceAleatorio;
     private String verduraAleatoria;
     private String nombreGranjero;
-    public static final int CULTIVAR = 3000;
+    public static final int CULTIVAR = 1000;
     
     public Granjeros(Almacen almacen, String nombreGranjero){
         this.almacen = almacen;
