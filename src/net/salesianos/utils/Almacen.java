@@ -1,21 +1,41 @@
 package net.salesianos.utils;
 
-public class Almacen {
-    private int cantidadVerduraAlmacen = 0;
-    private final int LIMITE_ALMACEN = 10;
+import java.util.ArrayList;
 
-    public synchronized void producir(){
-        if(cantidadVerduraAlmacen < LIMITE_ALMACEN){
-            cantidadVerduraAlmacen++;
+public class Almacen {
+    private int cantidadVerduraAlmacen;
+    private int limiteAlmacen;
+    private ArrayList<String> verdurasCultivadas = new ArrayList<String>();
+
+    public Almacen(int cantidadVerduraAlmacen, int limiteAlmacen){
+        this.cantidadVerduraAlmacen = cantidadVerduraAlmacen;
+        this.limiteAlmacen = limiteAlmacen;
+    }
+    public synchronized void producir() throws InterruptedException{
+        while(verdurasCultivadas.size() > this.limiteAlmacen){
+            wait();
         }
+        cantidadVerduraAlmacen++;
         notifyAll();
     }
 
-    public synchronized void consumir(){
+    public synchronized void consumir() throws InterruptedException{
+        while (cantidadVerduraAlmacen <= 0) {
+            wait();
+        }
         cantidadVerduraAlmacen--;
+        notifyAll();
     }
 
     public int getCantidadVerduraAlmacen(){
         return this.cantidadVerduraAlmacen;
+    }
+
+    public int getLimiteAlmacen(){
+        return this.limiteAlmacen;
+    }
+
+    public ArrayList<String> getVerdurasCultivadArrayList(){
+        return verdurasCultivadas;
     }
 }
