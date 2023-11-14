@@ -9,8 +9,15 @@ public class App {
         Granjeros granjero1 = new Granjeros(almacen, "Thanos");
         Granjeros granjero2 = new Granjeros(almacen,"Faker"); //Faker poque en el minuto 5 tiene un huevo de minions
 
+        granjero1.setPriority(Thread.MAX_PRIORITY);
+        granjero2.setPriority(Thread.MAX_PRIORITY);
+
         Consumidores consumidor1 = new Consumidores(almacen, "nicocadoAbokado");
         Consumidores consumidor2 = new Consumidores(almacen, "gordaco");
+
+        consumidor1.setPriority(Thread.MIN_PRIORITY);
+        consumidor2.setPriority(Thread.MIN_PRIORITY);
+
         System.out.println("Lista de verduras: ");
 
         try {
