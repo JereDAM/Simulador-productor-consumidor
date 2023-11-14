@@ -33,7 +33,7 @@ public class Granjeros extends Thread{
                 verduraAleatoria  = verduras[indiceAleatorio];
                 almacen.getVerdurasCultivadArrayList().add(verduraAleatoria);
                 almacen.producir();
-                System.out.println(almacen.getVerdurasCultivadArrayList().get(i) + " " + this.nombreGranjero);
+                System.out.println(verduraAleatoria + " " + this.nombreGranjero);
                 System.out.println(almacen.getVerdurasCultivadArrayList());
             }
         } catch (InterruptedException e) {

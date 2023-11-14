@@ -20,11 +20,10 @@ public class Almacen {
     }
 
     public synchronized void consumir() throws InterruptedException{
-        while (cantidadVerduraAlmacen <= 0) {
+        while (verdurasCultivadas.isEmpty()){
             wait();
         }
         cantidadVerduraAlmacen--;
-        notifyAll();
     }
 
     public int getCantidadVerduraAlmacen(){
