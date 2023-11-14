@@ -20,7 +20,7 @@ public class Consumidores extends Thread{
             for (int i = 0; i < almacen.getLimiteAlmacen(); i++) {
                    sleep((long)(1000 + Math.random() * ESPERA));
                    almacen.consumir();
-                   System.out.println(this.nombreConsumidor + " consumió ");
+                   System.out.println(this.nombreConsumidor + " consumió " + almacen.getVerdurasCultivadArrayList().get(0));
                    if(almacen.getVerdurasCultivadArrayList().size() > 0){
                        almacen.getVerdurasCultivadArrayList().remove(0);
                    }
