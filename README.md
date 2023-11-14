@@ -1,18 +1,22 @@
-## Getting Started
+# Simulador productor-consumidor
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto es, como su nombre indica, un simulador de productores y consumidores, donde se trabajaran con hilos.
 
-## Folder Structure
+## Caracteristicas
 
-The workspace contains two folders by default, where:
+    - Tener un recurso compartido, en este caso el almacen
+    - Los productores, en este caso granjeros, produciran una verdura aleatoria de un array, y la almacenarán en un arraylist
+    - Los consumidores, consumiran una verdura que esté almacenada en el arraylist anteriormente mencionado.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Hilos
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+[Granjeros](/src/net/salesianos/hilos/Granjeros.java)
+[Consumidores](/src/net/salesianos/hilos/Consumidores.java)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Recurso compartido
 
-## Dependency Management
+[Almacen](/src/net/salesianos/utils/Almacen.java)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Programa principal
+
+[App](/src/App.java)
